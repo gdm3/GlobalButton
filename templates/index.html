@@ -1,19 +1,11 @@
 <!DOCTYPE html>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type=text/javascript>
-        $(function() {
-          $('a#test').bind('click', function() {
-            $.getJSON('/background_process_test',
-                function(data) {
-            });
-            return false;
-          });
-        });
-</script>
-
-  <h3>Test</h3>
-  <form>
+  <h3 id="counter">Test</h3>
+  <form action="/clicked" method="post">
     <a href=# id=test><button class='btn btn-default'>Test</button></a>
-       
+  
   </form>
-
+  <script>
+  var clicks = '{{ data }}';
+  console.log(clicks)
+  document.getElementById('counter').innerHTML = clicks
+  </script>
