@@ -1,4 +1,5 @@
 from flask import Flask, render_template, Response, request, redirect, url_for
+from db import Check
 app = Flask(__name__)
 data = 3
 @app.route('/')
