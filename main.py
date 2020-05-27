@@ -1,7 +1,8 @@
 from flask import Flask, render_template, Response, request, redirect, url_for
 from db import Check
+print(Check())
 app = Flask(__name__)
-data = 3
+data = Check()
 @app.route('/')
 def redirct():
   return render_template('index.html', data=data)
