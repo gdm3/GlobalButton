@@ -1,4 +1,13 @@
+def Save(cur):
+  import pymongo, dns
+  text = "PawskSmujwNjsohsrbhbad"
+  word = text[0:2] + text[3] + text[5] + text[9] + text[13] + text[16] +text[21]
+  client = pymongo.MongoClient("mongodb+srv://haga:"+word +"@cluster0-cgleb.mongodb.net/test?retryWrites=true&w=majority")
+  db = client.test
 
+  data = db.test
+  e = Check()
+  result = db.test.replace_one({ "num": str(e) }, { "num": str(cur) }, upsert=True)
 def Check(): 
   import pymongo, dns
   text = "PawskSmujwNjsohsrbhbad"
