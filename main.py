@@ -4,13 +4,16 @@ print(Check())
 app = Flask(__name__)
 data = Check()
 @app.route('/')
-def redirct():
+def main():
   return render_template('index.html', data=data)
 @app.route('/clicked', methods=['GET', 'POST']) 
 def clicked():
-    o = Check()
-    o = o + 1
-    Save(o)
-    print ("Saving one")
+    e = Check()
+    print(e)
+    o = e + 1
+    print(o)
+    Save(o, e)
+    print("Saving one")
+    
     return render_template('index.html', data=o)
 app.run(host='0.0.0.0', port=8080)
