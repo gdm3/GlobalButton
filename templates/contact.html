@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link href="{{ url_for('static', filename='css/style3.css') }}" rel="stylesheet">
+    <title>Contact Us!</title>
+  </head>
+  
+  <body>
+  <ul>
+      <li><a href="https://globalbutton.noelbryan.repl.co/">GlobalButton</a></li>
+      <li><a href="https://globalbutton.noelbryan.repl.co/contact">Contact</a></li>
+      <li><a href="https://globalbutton.noelbryan.repl.co/about">About</a></li>
+    </ul>
+    <br>
+    <br>
+    <br>
+  <div>
+  <form action="{{ url_for('send') }}" method="post">
+    <label for="contact">Contact Us</label>
+    <input type="text" name="contact" placeholder="Contact Us">
+    <input type="submit">
+</form>
+</div>
+</body>
+</html>

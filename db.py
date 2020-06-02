@@ -1,6 +1,8 @@
+import pymongo, dns
+global text
+text = "PawskSmujwNjsohsrbhbad"
 def Save(cur, z):
-  import pymongo, dns
-  text = "PawskSmujwNjsohsrbhbad"
+
   word = text[0:2] + text[3] + text[5] + text[9] + text[13] + text[16] +text[21]
   
   client = pymongo.MongoClient("mongodb+srv://Person:"+word+"@cluster0-u4jiy.mongodb.net/test?retryWrites=true&w=majority")
@@ -10,8 +12,6 @@ def Save(cur, z):
   
   result = db.test.replace_one({ "num": str(z) }, { "num": str(cur) }, upsert=True)
 def Check(): 
-  import pymongo, dns
-  text = "PawskSmujwNjsohsrbhbad"
   word = text[0:2] + text[3] + text[5] + text[9] + text[13] + text[16] + text[21]
 
 
@@ -33,5 +33,13 @@ def Check():
   num = int(num)
   num = num 
   return num
-    
+def Send(data):
+  print("sending", data)
+  word = text[0:2] + text[3] + text[5] + text[9] + text[13] + text[16] +text[21]
+  client = pymongo.MongoClient("mongodb+srv://Person:"+word+"@cluster0-u4jiy.mongodb.net/test?retryWrites=true&w=majority")
+  db = client.data
+
+  col = db.data
+  send = [{"message": data}]
+  col.insert_many(send)
    
