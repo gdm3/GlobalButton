@@ -9,8 +9,8 @@ description = ""
 name = "subduedwealthypup"
 version = "0.1.0"
 [tool.poetry.dependencies]
-flask = "^1.1"
-python = "^3.7"
 dnspython = "^1.16"
+flask = "^1.1"
 pymongo = "^3.10"
+python = "^3.8"
 [tool.poetry.dev-dependencies]
