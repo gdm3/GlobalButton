@@ -1,11 +1,8 @@
-#This code is by Noel.
-#Importing Flask
+#This code is by Noel. Sorry about the bad comments, they are for a friend
 from flask import Flask, render_template, Response, request, redirect, url_for
-#Importing DB.py
 from db import Check, Save, Send
-#Declaring app
 app = Flask(__name__)
-#This is what happends when you go to the base url, and app.route('/path/to/url') declares that
+#This runs when you go to /
 @app.route('/')
 def main():
   #Renders index.html, and checks what the current data us and sends it.
@@ -32,7 +29,7 @@ def contact():
 #this is what happends when you click the click me button, because it redircts you to the /clicked page
 @app.route('/clicked', methods=['GET', 'POST']) 
 def clicked():
-    #From here on is not very good code tbh
+    #From here on is not very good code sry
     #First it gets the current number, which is needed using the Check() functuon from DB.py
     before = Check()
     print(e)
@@ -43,5 +40,5 @@ def clicked():
     Save(after, before)
     #Then it renders index.html again
     return render_template('index.html', data=o)
-#This will run the app on port 8080
+#This will run the site
 app.run(host='0.0.0.0', port=8080)
