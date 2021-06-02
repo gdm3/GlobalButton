@@ -1,4 +1,4 @@
-#This code is by Noel. Sorry about the bad comments, they are for a friend
+
 from flask import Flask, render_template, Response, request, redirect, url_for
 from db import Check, Save, Send
 app = Flask(__name__)
